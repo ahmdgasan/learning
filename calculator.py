@@ -7,12 +7,28 @@ def kali(angkaUser, angkaUser2):
 def bagi(angkaUser, angkaUser2):
     return angkaUser / angkaUser2
 
-angkaUser = int(input('Masukkan angkamu : '))
-angkaUser2 = int(input('Masukkan angka kedua : '))
+while True:
+    try:
+        angkaUser = int(input('Masukkan angkamu : '))
+        break
+    except ValueError:
+        print('Input harus angka!')
 
-operasi = int(input('Pilih operasi yang diinginkan : \n1. Tambah \n2. Kurang \n3. Kali \n4. Bagi \n Masukkan pilihanmu : '))
-while operasi < 1 or operasi > 4:
-    operasi = int(input('Pilihan tidak valid, silakan pilih antara 1-4 : '))
+while True:
+    try:
+        angkaUser2 = int(input('Masukkan angka kedua : '))
+        break
+    except ValueError:
+        print('Input harus angka!')
+
+while True:
+    try:
+        operasi = int(input('Pilih operasi yang diinginkan : \n1. Tambah \n2. Kurang \n3. Kali \n4. Bagi \n Masukkan pilihanmu : '))
+        while operasi < 1 or operasi > 4:
+            operasi = int(input('Pilihan tidak valid, silakan pilih antara 1-4 : '))
+        break
+    except ValueError:
+        print('Input harus angka!')
 
 if operasi == 1:
     print(f'Hasilnya adalah : {tambah(angkaUser, angkaUser2)}')
